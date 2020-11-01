@@ -1,5 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import Task from './componets/task/Task.styled'
+import PropTypes from 'prop-types';
+import React from 'react';
+
+
 
 function App() {
   return (
@@ -18,6 +23,15 @@ function App() {
           Learn React
         </a>
       </header>
+      <Task task = {{
+        'id': '1',
+        'title': '',
+        'state': ''
+      }}
+      onArchiveTask = {()=>{}}
+      onPinTask = {()=>{}}
+      />
+
     </div>
   );
 }
