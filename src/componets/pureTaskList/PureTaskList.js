@@ -6,7 +6,7 @@ import Task from '../task/Task.styled';
 import { connect } from 'react-redux';
 import { archiveTask, pinTask } from '../../lib/redux';
 
-export function  PureTaskList({ loading, tasks, onPinTask, onArchiveTask }) {
+export function  PureTaskList({className, loading, tasks, onPinTask, onArchiveTask }) {
 
 	const events = {
 		onPinTask,
@@ -14,15 +14,15 @@ export function  PureTaskList({ loading, tasks, onPinTask, onArchiveTask }) {
 	};
 
 	if (loading) {
-		return <div className="list-items">loading</div>;
+		return <div className={className + " list-items"}>loading</div>;
 	}
 
 	if (tasks.length === 0) {
-		return <div className="list-items">empty</div>;
+		return <div className={className + " list-items"}>empty</div>;
 	}
 
 	return (
-		<div className="list-items">
+		<div className={className + " list-items"}>
 			{tasks.map(task => (
 				<Task key={task.id} task={task} {...events} />
 			))}

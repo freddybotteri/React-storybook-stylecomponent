@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Task from '../task/Task.styled';
 
-function TaskList({ loading, tasks, onPinTask, onArchiveTask }) {
+function TaskList({className, loading, tasks, onPinTask, onArchiveTask }) {
 	const events = {
 		onPinTask,
 		onArchiveTask,
@@ -19,7 +19,7 @@ function TaskList({ loading, tasks, onPinTask, onArchiveTask }) {
 
 	if (loading) {
 		return (
-			<div className="list-items">
+			<div className={className + " list-items"}>
 				{LoadingRow}
 				{LoadingRow}
 				{LoadingRow}
@@ -32,7 +32,7 @@ function TaskList({ loading, tasks, onPinTask, onArchiveTask }) {
 
 	if (tasks.length === 0) {
 		return (
-			<div className="list-items">
+			<div className={className + " list-items"}>
 				<div className="wrapper-message">
 					<span className="icon-check" />
 					<div className="title-message">You have no tasks</div>
@@ -48,7 +48,7 @@ function TaskList({ loading, tasks, onPinTask, onArchiveTask }) {
 	];
 
 	return (
-		<div className="list-items">
+		<div className={className + " list-items"}>
 			{tasksInOrder.map(task => (
 				<Task key={task.id} task={task} {...events} />
 			))}

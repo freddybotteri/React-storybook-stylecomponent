@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import  {PureTaskList}   from './PureTaskList';
+import  PureTaskList   from './PureTaskList.styled';
 import { task, actions } from '../task/Task.stories';
 
 export const defaultTasks = [

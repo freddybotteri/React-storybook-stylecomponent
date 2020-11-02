@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import TaskList from './TaskList';
+import {PureTaskList} from './PureTaskList';
 
 
-export default styled(TaskList).attrs({})`
+export default styled(PureTaskList).attrs({})`
 
 	.list-heading {
 	  letter-spacing: .3em;
