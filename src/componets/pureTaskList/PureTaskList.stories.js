@@ -18,7 +18,7 @@ export const withPinnedTasks = [
 	{ id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
 ];
 
-storiesOf('PureList', module)
+storiesOf('PureTaskList', module)
 	.addDecorator(story => <div style={{ padding: '3rem' }}>{story()}</div>)
 	.add('default', () => <PureTaskList tasks={defaultTasks} {...actions} />)
 	.add('withPinnedTasks', () => <PureTaskList tasks={withPinnedTasks} {...actions} />)
